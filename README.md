@@ -14,29 +14,30 @@ mkdir ~/.java
 mv *.jar ~/.java
 ```
 
-Add the following lines to your `~/.bashrc` file. The first line adds the Jar
-files to your java classpath and the last two lines create a aliases to compile
-and test your java files:
+Add the following lines to your `~/.bashrc` or `~/.config/fish/config.fish` file. The first line adds the Jar
+files to your java classpath and the last one is an alias for running the junit test runner:
 
 ```bash
-# Use the commented out line below instead of the export line if you're using fish
-# set -gx CLASSPATH $CLASSPATH $HOME/.java
-export CLASSPATH="$CLASSPATH:$HOME/.java"
+# Use the commented out line below if you're using bash or zsh
+# export CLASSPATH $CLASSPATH . $HOME/.java/*.jar
+# Use the commented out line below if you're using fish
+# set -gx CLASSPATH $CLASSPATH . $HOME/.java/*.jar
 
-# Java compile and test aliases
-alias java-compile="javac --class-path .:$HOME/.java/junit-4.13.2.jar:$HOME/.java/hamcrest-core-1.3.jar"
-alias java-test="java --class-path .:$HOME/.java/junit-4.13.2.jar:$HOME/.java/hamcrest-core-1.3.jar org.junit.runner.JUnitCore"
+# Java test alias
+alias javat="java org.junit.runner.JUnitCore"
 ```
 
-Source your bashrc file:
+Source your bashrc or config.fish file:
 
 ```bash
 source ~/.bashrc
+# Or
+source ~/.config/fish/config.fish
 ```
 
 Now you can compile and run the tests:
 
 ```bash
-java-compile *.java
-java-test _98_ValidateBinarySearchTreeTest
+javac *.java
+javat _98_ValidateBinarySearchTreeTest
 ```
