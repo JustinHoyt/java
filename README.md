@@ -3,7 +3,7 @@ repository:
 
 ```bash
 mkdir -p ~/development
-git clone https://github.com/JustinHoyt/java
+git clone https://github.com/JustinHoyt/java development/java
 cd ~/development/java
 ```
 
