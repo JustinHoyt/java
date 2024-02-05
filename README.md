@@ -20,8 +20,8 @@ and test your java files:
 
 ```bash
 # Use the commented out line below instead of the export line if you're using fish
-# set -gx CLASSPATH $CLASSPATH $HOME/development/java
-export CLASSPATH="$CLASSPATH:$HOME/development/java"
+# set -gx CLASSPATH $CLASSPATH $HOME/.java
+export CLASSPATH="$CLASSPATH:$HOME/.java"
 
 # Java compile and test aliases
 alias java-compile="javac --class-path .:$HOME/.java/junit-4.13.2.jar:$HOME/.java/hamcrest-core-1.3.jar"
